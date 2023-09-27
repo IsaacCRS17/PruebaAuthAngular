@@ -48,6 +48,6 @@ export class TokenService {
   //Método para cerrar sesión
   public logOut(): void {
     window.localStorage.removeItem(TOKEN_KEY);
-    this.router.navigate(['/auth']);
+    this.router.navigate(['/login']);
   }
 }
