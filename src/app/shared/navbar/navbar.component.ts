@@ -16,7 +16,6 @@ export class NavbarComponent implements OnInit{
 
   }
 
-
   //acción de cerrar sesión
   onLogOut(): void {
     this.tokenService.logOut();

@@ -11,8 +11,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): boolean {    // Verificar si el usuario está autenticado (verificar el token, por ejemplo).
-
+  ): boolean {    // Verificar si el usuario está autenticado (verificar el token, por ejemplo)
     if (this.tokenService.isLogged()) {
       //Para validar roles
       //if (this.tokenService.isEjecutive()) {
@@ -23,7 +22,7 @@ export class AuthGuard implements CanActivate {
 
       //Para validar con un solo rol
       this.router.navigate(['/dashboard']);
-       return false;
+      return false;
     }
     return true;
   }

@@ -7,6 +7,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { authInterceptorProvider } from './interceptors/interceptor-auth.service';
+import { AuthRoutingModule } from './auth/auth-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { authInterceptorProvider } from './interceptors/interceptor-auth.service
     DashboardModule,
     AuthModule,
     SharedModule,
+    AuthRoutingModule,
     AppRoutingModule
   ],
   providers: [authInterceptorProvider],

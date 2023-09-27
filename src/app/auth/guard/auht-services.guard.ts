@@ -19,7 +19,7 @@ export class AuthGuardService implements CanActivate{
     this.realRol = 'EJECUTIVO';
 
     if (!this.tokenService.isLogged()) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/auth']);
       return false;
     };
 
@@ -28,7 +28,7 @@ export class AuthGuardService implements CanActivate{
     };
 
     if (expectedRol.indexOf(this.realRol) < 0) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/auth']);
       return false;
     };
     return true;
