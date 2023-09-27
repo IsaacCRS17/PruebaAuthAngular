@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthserviceService {
+export class AuthService {
 
   private apiUrl = 'http://159.65.96.86:8080/services/auth/signin';
 

@@ -8,6 +8,9 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { authInterceptorProvider } from './interceptors/interceptor-auth.service';
 import { AuthRoutingModule } from './auth/auth-routing.module';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './effects/auth-effects';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { AuthRoutingModule } from './auth/auth-routing.module';
     AuthModule,
     SharedModule,
     AuthRoutingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({}), // Configura el módulo Store
+    EffectsModule.forRoot([AuthEffects])
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent]
