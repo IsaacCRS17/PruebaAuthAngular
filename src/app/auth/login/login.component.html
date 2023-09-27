@@ -1,0 +1,21 @@
+<div class="section">
+  <div class="container w-50 my-5">
+    <div class="row my-5">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <h1 class="h3 mb-3 fw-normal">Inicia Sesión</h1>
+
+        <div class="form-floating my-1">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
+          <label for="floatingInput">Correo</label>
+        </div>
+        <div class="form-floating my-1">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+        <button class="btn btn-primary w-100 py-2" type="submit">Iniciar Sesión</button>
+        <p class="mt-5 mb-3 text-body-secondary">&copy; 2023</p>
+      </form>
+
+    </div>
+  </div>
+</div>
