@@ -45,6 +45,19 @@ export class TokenService {
     return true;
   }
 
+  //método para obtener el id de colaborador
+  public getIdColaborador():number{
+    if (!this.isLogged()) {
+      return -1;
+    }
+    const token = this.getToken();
+    const payload = token.split('.')[1];
+    const payloadDecoded = atob(payload);
+    const values = JSON.parse(payloadDecoded);
+    const idColaborador = values.idColaborador;
+
+    return idColaborador;
+  }
   //Método para cerrar sesión
   public logOut(): void {
     window.localStorage.removeItem(TOKEN_KEY);

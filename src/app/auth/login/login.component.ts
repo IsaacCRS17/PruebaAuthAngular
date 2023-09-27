@@ -25,6 +25,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
+
+  //Acción de iniciar sesión
   onLogin() {
     if (this.loginForm.valid) {
       const emailControl = this.loginForm.get('email');
@@ -36,10 +38,12 @@ export class LoginComponent implements OnInit {
 
         //Lógica para llamar el servicio de authenticación y redirigir a la ruta correspondiente
         this.authService.login(email, password).subscribe((data:any)=>{
-          console.log(data)
           if(data.accessToken){
             this.tokenService.setToken(data.accessToken);
             this.router.navigate(['/dashboard']);
+          } else {
+            this.router.navigate(['/login']);
+
           }
         });
       }

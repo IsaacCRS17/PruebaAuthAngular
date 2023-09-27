@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { authInterceptorProvider } from './interceptors/interceptor-auth.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [authInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

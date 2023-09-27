@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, signal, OnInit } from '@angular/core';
 import { TokenService } from 'src/app/auth/services/token.service';
 
 @Component({
@@ -8,10 +7,17 @@ import { TokenService } from 'src/app/auth/services/token.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit{
+
+  idColaborador = signal(0);
+  role = signal("Ejecutivo");
   constructor(private tokenService: TokenService){}
   ngOnInit(): void {
+    this.idColaborador = signal(this.tokenService.getIdColaborador());
+
   }
 
+
+  //acción de cerrar sesión
   onLogOut(): void {
     this.tokenService.logOut();
   }
